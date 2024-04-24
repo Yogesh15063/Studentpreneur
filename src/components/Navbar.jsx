@@ -18,7 +18,7 @@ export const Navbar = () => {
             smooth={true}
             offset={-70}
             duration={500}
-            className="text-3xl font-bold text-purple-400 hover:text-gray-200 transition duration-300 cursor-pointer font-poppins"
+            className="text-3xl font-bold text-purple-400 transition duration-300 cursor-pointer font-poppins hover:text-gray-200"
           >
             Studentpreneur
           </Link>
@@ -32,7 +32,7 @@ export const Navbar = () => {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                className="text-lg font-semibold text-purple-400 transition duration-300 cursor-pointer font-poppins  hover:text-purple-400"
+                className="text-lg font-semibold text-purple-400 transition duration-300 cursor-pointer font-poppins hover:text-gray-200"
               >
                 {link.label}
               </Link>
@@ -46,7 +46,7 @@ export const Navbar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className="text-lg font-semibold text-purple-400 transition duration-300 cursor-pointer font-poppins  hover:text-purple-400"
+              className="text-lg font-semibold text-purple-400 transition duration-300 cursor-pointer font-poppins hover:text-gray-200"
             >
               Products
             </Link>

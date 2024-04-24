@@ -3,7 +3,7 @@ import Card from './HeroCard'; // Assuming Card component is in a separate file
 
 const HeroSection = () => {
   return (
-    <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-8">
+    <div id='home'className="container mx-auto  flex flex-col md:flex-row items-center justify-between px-4 py-8">
       {/* Image */}
       <div className="md:w-1/2 mb-8 md:mb-0 md:mr-8 flex justify-center ">
         <img src="Hero.png" alt="Hero Image" className="w-full h-full " style={{ maxWidth: '100%' }} />

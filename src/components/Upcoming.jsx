@@ -51,7 +51,7 @@ export default function Upcoming() {
     }
 
     return (
-        <>
+        <div id='projects' className="container mx-auto px-4 sm:px-6 lg:px-8 mt-8"> {/* Add margin top to create distance from the screen edges */}
             <div className="flex justify-center">
                 <h1
                     ref={headingRef}
@@ -139,7 +139,6 @@ export default function Upcoming() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
-

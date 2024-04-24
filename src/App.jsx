@@ -17,11 +17,12 @@ function App() {
     <>
      <AnimatedGradientBackground/> 
     <Navbar></Navbar>
-    <Hero></Hero>
+    <Hero id='home'></Hero>
     <CompanyLogosMarquee/> 
+    
     <Products id="products"></Products>
    
-    <Upcoming></Upcoming>
+    <Upcoming id='projects'></Upcoming>
     <Services></Services>
     <Stats></Stats>
     <InstagramReel></InstagramReel>
