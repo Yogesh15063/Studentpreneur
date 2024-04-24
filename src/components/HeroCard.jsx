@@ -23,7 +23,7 @@ const Card = () => {
       </h2>
       <div className="flex items-center mb-4">
         <img src="2.png" alt="Idea Icon" className="w-8 h-8 mr-2" />
-        <h3 className="text-lg font-poppins font-semibold text-3xl text-white flex-shrink-0">
+        <h3 className=" font-poppins font-semibold text-3xl text-white flex-shrink-0">
           Idea x Builders
         </h3>
         <img src="3.png" alt="Builders Icon" className="w-8 h-8 ml-1" />
