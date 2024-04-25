@@ -12,7 +12,7 @@ const Product = ({ name, description, imageUrl, websiteUrl }) => {
   return (
     <div
       ref={ref}
-      className={`w-full sm:w-1/2 max-w-md p-6 mb-4 sm:mb-0 font-poppins rounded-lg shadow-lg dark:border-gray-600 transition duration-500 ease-in-out transform ${
+      className={`w-full sm:w-1/2 max-w-md p-6 mb-4 sm:mb-0 font-poppins mr-2 mt-2 rounded-lg shadow-lg dark:border-gray-600 transition duration-500 ease-in-out transform ${
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
       style={{

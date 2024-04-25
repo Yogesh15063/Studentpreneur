@@ -69,7 +69,7 @@ export default function Upcoming() {
                         {/* Project 1 */}
                         <span
                             ref={project1Ref}
-                            className={`w-full sm:w-1/2 max-w-md p-6 mb-4 sm:mb-0 font-poppins relative rounded-lg shadow-lg dark:border-gray-600 transition duration-500 ease-in-out transform ${
+                            className={`w-full sm:w-1/2 max-w-md p-6 mb-4 sm:mb-0 mr-2 font-poppins relative rounded-lg shadow-lg dark:border-gray-600 transition duration-500 ease-in-out transform ${
                                 project1Animated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                             }`}
                             style={gradientStyle}
@@ -104,7 +104,7 @@ export default function Upcoming() {
                         {/* Project 2 */}
                         <span
                             ref={project2Ref}
-                            className={`w-full sm:w-1/2 max-w-md p-6 mb-4 sm:mb-0 font-poppins relative rounded-lg shadow-lg dark:border-gray-600 transition duration-500 ease-in-out transform ${
+                            className={`w-full sm:w-1/2 max-w-md p-6 mb-4 sm:mb-0 mr-2 mt-2 font-poppins relative rounded-lg shadow-lg dark:border-gray-600 transition duration-500 ease-in-out transform ${
                                 project2Animated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                             }`}
                             style={gradientStyle}
