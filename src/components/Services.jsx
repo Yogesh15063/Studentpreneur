@@ -27,11 +27,11 @@ function Services() {
           }`}
           style={gradientStyle}
         >
-          <h4 className="text-l text-gray-300 font-poppins font-semibold uppercase">
-            Our Services
+          <h4 className="text-l text-white font-poppins text-xl font-bold uppercase mb-4">
+            <span className="text-2xl sm:text-3xl font-bold">Our Services</span> {/* Made "Our Services" slightly smaller */}
           </h4>
-          <div className="mb-4">
-            <h2 className="text-lg sm:text-xl font-poppins font-semibold text-gray-200">
+          <div>
+            <h2 className="text-lg sm:text-xl font-poppins font-semibold text-gray-400">
               <span className="font-bold text-3xl sm:text-4xl">Community</span><br />
               <span className="font-bold text-3xl sm:text-4xl">Sourced</span>
             </h2>
@@ -43,3 +43,4 @@ function Services() {
 }
 
 export default Services;
+

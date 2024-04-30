@@ -18,77 +18,51 @@ export default function Stats() {
   }
 
   return (
-    <div ref={ref} className="container mx-auto px-4 sm:px-6 lg:px-8 mt-8"> {/* Add margin top and bottom to create distance from the screen edges */}
+    <div ref={ref} className="container mx-auto px-4 sm:px-6 lg:px-8 mt-8">
       <div
-        className={`flex justify-center  items-center w-full ${animated ? "opacity-100" : "opacity-0"}`}
+        className={`flex justify-center items-center w-full ${
+          animated ? "opacity-100" : "opacity-0"
+        }`}
       >
         <div
-          className={`max-w-3xl w-full p-12 font-poppins rounded-lg shadow-lg dark:border-gray-600 ${animated ? "animate-fadeIn" : "opacity-0"}`}
+          className={`max-w-3xl w-full p-8 sm:p-12 font-poppins rounded-lg shadow-lg dark:border-gray-600 ${
+            animated ? "animate-fadeIn" : "opacity-0"
+          }`}
           style={gradientStyle}
         >
-          <div className="flex justify-center">
-            <h1 className="text-2xl lg:text-3xl text-gray-300 font-poppins font-semibold uppercase mb-4">
+          <div className="flex flex-col items-center mb-6">
+            <h1 className="text-xl lg:text-3xl text-gray-300 font-poppins font-semibold uppercase mb-2">
               Our Entrepreneurs
             </h1>
           </div>
           <div className="flex justify-around">
-            {/* Animated count-up components */}
-            <div
-              className="text-center transition-all duration-500 transform hover:scale-110"
-            >
-              <div className="flex justify-center">
-                <CountUp start={0} end={8500} duration={2} redraw={true}>
-                  {({ countUpRef }) => (
-                    <p className="text-lg text-gray-200 font-semibold" ref={countUpRef} />
-                  )}
-                </CountUp>
-                <span className="text-xl ml-1 font-bold text-white">+</span>
-              </div>
-              <p className="text-sm text-gray-300">Followers</p>
-            </div>
-            <div
-              className="text-center transition-all duration-500 transform hover:scale-110"
-            >
-              <div className="flex justify-center">
-                <CountUp start={0} end={523} duration={2} redraw={true}>
-                  {({ countUpRef }) => (
-                    <p className="text-lg text-gray-200 font-semibold" ref={countUpRef} />
-                  )}
-                </CountUp>
-                <span className="text-xl ml-1 font-bold text-white">+</span>
-              </div>
-              <p className="text-sm text-gray-300">Members</p>
-            </div>
-            <div
-              className="text-center transition-all duration-500 transform hover:scale-110"
-            >
-              <div className="flex justify-center">
-                <CountUp start={0} end={30} duration={2} redraw={true}>
-                  {({ countUpRef }) => (
-                    <p className="text-lg text-gray-200 font-semibold" ref={countUpRef} />
-                  )}
-                </CountUp>
-                <span className="text-xl ml-1 font-bold text-white">+</span>
-              </div>
-              <p className="text-sm text-gray-300">Gigs done</p>
-            </div>
-            <div
-              className="text-center transition-all duration-500 transform hover:scale-110"
-            >
-              <div className="flex justify-center">
-                <CountUp start={0} end={8} duration={2} redraw={true}>
-                  {({ countUpRef }) => (
-                    <p className="text-lg text-gray-200 font-semibold" ref={countUpRef} />
-                  )}
-                </CountUp>
-                <span className="text-xl ml-1 font-bold text-white">+</span>
-              </div>
-              <p className="text-sm text-gray-300">Side Projects</p>
-            </div>
+            <StatCounter start={0} end={8500} duration={2} text="Followers" />
+            <StatCounter start={0} end={523} duration={2} text="Members" />
+            <StatCounter start={0} end={30} duration={2} text="Gigs done" />
+            <StatCounter start={0} end={8} duration={2} text="Side Projects" />
           </div>
         </div>
       </div>
     </div>
   );
 }
+
+// Separate component for CountUp component to improve reusability and readability
+const StatCounter = ({ start, end, duration, text }) => {
+  return (
+    <div className="text-center mb-4 inline-block w-32 sm:w-auto">
+      <div className="flex flex-col items-center">
+        <CountUp start={start} end={end} duration={duration}>
+          {({ countUpRef }) => (
+            <p className="text-3xl lg:text-4xl text-gray-200 font-semibold" ref={countUpRef} />
+          )}
+        </CountUp>
+        <span className="text-xl ml-1 font-bold text-white">+</span>
+        <p className="text-sm lg:text-base text-gray-300">{text}</p>
+      </div>
+    </div>
+  );
+};
+
+
 
