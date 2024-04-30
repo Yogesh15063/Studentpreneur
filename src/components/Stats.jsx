@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import CountUp from "react-countup";
 
@@ -13,9 +13,11 @@ export default function Stats() {
 
   const [animated, setAnimated] = useState(false);
 
-  if (inView && !animated) {
-    setAnimated(true);
-  }
+  useEffect(() => {
+    if (inView && !animated) {
+      setAnimated(true);
+    }
+  }, [inView, animated]);
 
   return (
     <div ref={ref} className="container mx-auto px-4 sm:px-6 lg:px-8 mt-8">
@@ -31,8 +33,8 @@ export default function Stats() {
           style={gradientStyle}
         >
           <div className="flex flex-col items-center mb-6">
-            <h1 className="text-xl lg:text-3xl text-gray-300 font-poppins font-semibold uppercase mb-2">
-              Our Entrepreneurs
+            <h1 className="text-2xl sm:text-3xl font-bold text-white">
+              Our Numbers
             </h1>
           </div>
           <div className="flex justify-around">
@@ -47,22 +49,35 @@ export default function Stats() {
   );
 }
 
-// Separate component for CountUp component to improve reusability and readability
 const StatCounter = ({ start, end, duration, text }) => {
+  const [triggerAnimation, setTriggerAnimation] = useState(false);
+
+  useEffect(() => {
+    if (triggerAnimation) {
+      setTriggerAnimation(false);
+    }
+  }, [triggerAnimation]);
+
+  useEffect(() => {
+    setTriggerAnimation(true);
+  }, [start, end, duration, text]);
+
   return (
     <div className="text-center mb-4 inline-block w-32 sm:w-auto">
       <div className="flex flex-col items-center">
-        <CountUp start={start} end={end} duration={duration}>
+        <CountUp start={start} end={end} duration={duration} redraw={true} startOnMount={false} preserveValue={!triggerAnimation}>
           {({ countUpRef }) => (
-            <p className="text-3xl lg:text-4xl text-gray-200 font-semibold" ref={countUpRef} />
+            <p className="text-xl lg:text-2xl text-gray-200 font-semibold" ref={countUpRef} />
           )}
         </CountUp>
-        <span className="text-xl ml-1 font-bold text-white">+</span>
-        <p className="text-sm lg:text-base text-gray-300">{text}</p>
+        <span className="text-lg font-bold text-white">+</span>
+        <p className="text-xs lg:text-sm text-gray-300">{text}</p>
       </div>
     </div>
   );
 };
+
+
 
 
 

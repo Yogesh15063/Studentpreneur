@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className=" text-white py-4">
+    <footer id='contact'className=" text-white py-4">
       <div className="flex justify-center">
         <a href="#" className="mr-4">
         <img src="instagram.png" className='w-8 h-8 mx-5' alt="" srcset="" />
