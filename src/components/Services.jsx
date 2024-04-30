@@ -27,13 +27,13 @@ function Services() {
           }`}
           style={gradientStyle}
         >
-          <h4 className="text-l text-white font-poppins text-xl font-bold uppercase mb-4">
-            <span className="text-2xl sm:text-3xl font-bold">Our Services</span> {/* Made "Our Services" slightly smaller */}
+          <h4 className="text-l text-white font-poppins text-xl font-bold uppercase m">
+            <span className="font-bold text-3xl sm:text-4xl">Our Services</span> {/* Made "Our Services" slightly smaller */}
           </h4>
           <div>
             <h2 className="text-lg sm:text-xl font-poppins font-semibold text-gray-400">
-              <span className="font-bold text-3xl sm:text-4xl">Community</span><br />
-              <span className="font-bold text-3xl sm:text-4xl">Sourced</span>
+              <span className="text-2xl sm:text-3xl font-bold">Community</span><br />
+              <span className="text-2xl sm:text-3xl font-bold">Sourced</span>
             </h2>
           </div>
         </div>

@@ -38,7 +38,7 @@ export default function Stats() {
             </h1>
           </div>
           <div className="flex justify-around">
-            <StatCounter start={0} end={8500} duration={2} text="Followers" />
+            <StatCounter start={0} end={10000} duration={2} text="Followers" />
             <StatCounter start={0} end={523} duration={2} text="Members" />
             <StatCounter start={0} end={30} duration={2} text="Gigs done" />
             <StatCounter start={0} end={8} duration={2} text="Side Projects" />
