@@ -80,7 +80,7 @@ const Products = () => {
           Our Products
         </h1>
       </motion.div>
-      <div className="flex flex-col justify-center" id="products">
+      <div className="flex justify-center"> {/* Center-aligning container */}
         <motion.div
           className="max-w-screen-xl mb-8 w-full sm:flex justify-between"
           initial={{ opacity: 0 }}
@@ -108,4 +108,3 @@ const Products = () => {
 };
 
 export default Products;
-

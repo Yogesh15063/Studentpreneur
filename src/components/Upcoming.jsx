@@ -64,8 +64,8 @@ const Upcoming = ({ title, description, imageSrc, website }) => {
 const UpcomingProducts = () => {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
-      <div className="flex justify-center"></div>
-      <div className="flex flex-col justify-center" id="products">
+      
+      <div className="flex justify-center"> {/* Center-aligning container */}
         <div className="max-w-screen-xl mb-8 w-full sm:flex justify-between">
           <Upcoming
             title="Side Project"
