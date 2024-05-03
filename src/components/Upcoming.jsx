@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 const Upcoming = ({ title, description, imageSrc, website }) => {
   const [animated, setAnimated] = useState(false);
@@ -7,19 +8,20 @@ const Upcoming = ({ title, description, imageSrc, website }) => {
     threshold: 0.5,
   });
 
-  if (inView && !animated) {
-    setAnimated(true);
-  }
+  useEffect(() => {
+    if (inView && !animated) {
+      setAnimated(true);
+    }
+  }, [inView, animated]);
 
   return (
-    <div
+     <motion.div
       ref={ref}
-      className={`relative w-full sm:w-1/2 max-w-xl p-6 mb-4 sm:mb-0 font-poppins mr-2 rounded-lg shadow-lg dark:border-gray-600 transition duration-500 ease-in-out ${
-        animated ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      }`}
-      style={{
-        backgroundImage: "linear-gradient(to right, #37136B, #94138B)",
-      }}
+      className={`relative w-full sm:w-1/2 max-w-xl p-6 sm:mb-0 font-poppins  mr-2 mt-2 rounded-lg shadow-lg dark:border-gray-600 transform`}
+      style={{ backgroundImage: "linear-gradient(to right, #37136B, #94138B)" }}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: animated ? 1 : 0, scale: animated ? 1 : 0.8 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
     >
       <div className="flex justify-between items-center">
         <div className="flex flex-col">
@@ -33,25 +35,35 @@ const Upcoming = ({ title, description, imageSrc, website }) => {
               {description}
             </span>
           </span>
-          <button
+          <motion.button
+            whileHover={{ scale: 1.05, boxShadow: "0px 0px 10px #ccc", rotate: [0, -5, 5, -5, 0] }}
+            whileTap={{ scale: 0.95 }}
             onClick={() => window.open(website, "_blank")}
             className="bg-transparent border-2 text-xs h-8 rounded-full border-white text-white p-1 mt-4"
             style={{ minWidth: "80px", width: "80px" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: animated ? 1 : 0, y: animated ? 0 : 20 }}
+            transition={{ delay: 0.2, duration: 0.5, ease: "easeInOut" }}
           >
             Try Now
-          </button>
+          </motion.button>
         </div>
-        <div className="w-32 sm:w-48 ml-4 flex justify-center">
+        <motion.div
+          className="w-32 sm:w-48 ml-4 flex justify-center"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: animated ? 1 : 0, scale: animated ? 1 : 0.8 }}
+          transition={{ delay: 0.3, duration: 0.5, ease: "easeInOut" }}
+        >
           <img className="w-full h-full rounded-lg" src={imageSrc} alt={title} />
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 const UpcomingProducts = () => {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
       <div className="flex justify-center"></div>
       <div className="flex flex-col justify-center" id="products">
         <div className="max-w-screen-xl mb-8 w-full sm:flex justify-between">

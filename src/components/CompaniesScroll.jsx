@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Marquee = ({ children }) => {
   return (
@@ -8,7 +9,7 @@ const Marquee = ({ children }) => {
   );
 };
 
-const CompanyLogosMarquee = () => {
+const CompanyLogosMarquee = ({ images }) => {
   return (
     <>
       <div className="mb-20">
@@ -17,11 +18,21 @@ const CompanyLogosMarquee = () => {
         </div>
         <div className="flex mb-8 justify-center items-center">
           <div className="w-3/4 rounded-lg p-2">
+            {/* Apply animation to the Marquee component */}
             <Marquee>
               <div className="flex">
-                <img src="Ratofy.png" alt="Company Logo 1" className="h-12 mx-8" />
-                <img src="hoodiny.png" alt="Company Logo 2" className="h-12 mx-8" />
-                <img src="3.png" alt="Company Logo 3" className="h-12 mx-8" />
+                {images.map((imageUrl, index) => (
+                  <motion.img
+                    key={index}
+                    src={imageUrl}
+                    alt={`Company Logo ${index + 1}`}
+                    className="h-12 mx-8 animate-pulse"
+                    whileHover={{ scale: 1.2 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  />
+                ))}
               </div>
             </Marquee>
           </div>
@@ -32,3 +43,5 @@ const CompanyLogosMarquee = () => {
 };
 
 export default CompanyLogosMarquee;
+
+

@@ -14,6 +14,8 @@ import CompanyLogosMarquee from './components/CompaniesScroll';
 import Footer from './components/Footer';
 import About from './Pages/About'; // Correct import path for About component
 
+import OurServices from './Pages/Our-Services';
+
 function App() {
   return (
     <Router>
@@ -23,16 +25,29 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Hero id='home' />
-            <CompanyLogosMarquee />
+            <CompanyLogosMarquee
+  images={[
+    "arcana.png",
+    "biconomy.png",
+    "boat.png",
+    "polygon.png",
+    "unacademy.png",
+    "R.png",
+    "O.png"
+    // Add more image URLs here as needed
+  ]}
+/>
             <Products id="products" />
             <UpcomingProducts id='projects' />
             <Services />
             <Stats />
-          
             <Footer />
           </Route>
-          <Route path="/about"> {/* Define route for About page */}
+          <Route path="/about">
             <About />
+          </Route>
+          <Route path="/services"> {/* Define route for Services page */}
+            <OurServices />
           </Route>
         </Switch>
       </>
