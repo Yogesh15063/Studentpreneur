@@ -7,7 +7,7 @@
   z-index: -1;
   animation: animateGradient 10s linear infinite;
   background-image: linear-gradient(to right, #050012, #1a0739, #00031a); /* Deeper dark gradient colors */
-  background-size: 300% 100%; /* Triple the width for smoother animation */
+  background-size: 300% 100%; 
 }
 
 @keyframes animateGradient {

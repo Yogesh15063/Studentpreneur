@@ -24,7 +24,7 @@ const Card = () => {
   }, [animated, control]);
 
   const handleJoinNowClick = () => {
-    // Replace the URL below with the link you want to redirect to
+    
     window.location.href = "https://example.com";
   };
 

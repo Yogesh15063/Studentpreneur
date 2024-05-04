@@ -69,7 +69,7 @@ const Product = ({ title, description, imageSrc, website, isFirst, isLast }) => 
 
 const Products = () => {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 ">
+    <div id="products" className="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 ">
       <motion.div
         className="flex justify-center"
         initial={{ opacity: 0, y: 20 }}
@@ -82,7 +82,7 @@ const Products = () => {
       </motion.div>
       <div className="flex justify-center"> {/* Center-aligning container */}
         <motion.div
-          className="max-w-screen-xl mb-8 w-full sm:flex justify-between"
+          className="max-w-full mb-5 w-full sm:flex justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8, ease: "easeInOut" }}

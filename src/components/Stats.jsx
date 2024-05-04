@@ -72,9 +72,3 @@ const StatCounter = ({ start, end, duration, text }) => {
     </div>
   );
 };
-
-
-
-
-
-
