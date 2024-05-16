@@ -71,7 +71,7 @@ const UpcomingProducts = () => {
             title="Side Project"
             description="Litebulb"
             imageSrc="litebulb.png"
-            website="https://ratofy.xyz/"
+            website="https://www.litebulb.xyz/"
           />
           <Upcoming
             title="chatbot"

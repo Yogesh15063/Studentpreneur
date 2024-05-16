@@ -16,10 +16,15 @@ const About = () => {
           <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-500 hover:scale-105" style={gradientStyle}>
             <div className="px-6 py-8 sm:p-12">
               <p className="text-lg text-white font-poppins mb-8">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero ac justo porttitor, et consequat quam aliquet. Fusce fermentum ex quis lorem rhoncus, sit amet mattis lacus blandit. Duis sed nunc nec metus volutpat lobortis nec nec sem. Aenean vulputate elit et ante sollicitudin, id malesuada lorem accumsan. Nam eget mi quis purus elementum feugiat eget ac tortor. Vestibulum mollis tellus vel tellus tempor vulputate. Cras vel sollicitudin metus. Aenean vestibulum consequat efficitur. Sed pharetra sollicitudin posuere. 
-              </p>
-              <p className="text-lg text-white font-poppins">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero ac justo porttitor, et consequat quam aliquet. Fusce fermentum ex quis lorem rhoncus, sit amet mattis lacus blandit. Duis sed nunc nec metus volutpat lobortis nec nec sem. Aenean vulputate elit et ante sollicitudin, id malesuada lorem accumsan. Nam eget mi quis purus elementum feugiat eget ac tortor. Vestibulum mollis tellus vel tellus tempor vulputate. Cras vel sollicitudin metus. Aenean vestibulum consequat efficitur. Sed pharetra sollicitudin posuere. 
+                As a young entrepreneur we suffered a lot, be it being new to the market, or choosing the unconventional path of entrepreneurship, we have been through all of it.
+
+                I built a complete decentralized social media and got grants worth 32k$ to pursue my dream of entrepreneurship and making a dream product, 
+
+                while Shahzeb worked with many social media clients to make their social media better..
+
+                We understood the complementary skills of making tech a reality and advertising it through social media,
+
+                So and tanmay ( co-founder of ratofy, the decentralized social media) joined in the mission to build a community for student entrepreneurs
               </p>
             </div>
           </div>
@@ -29,12 +34,16 @@ const About = () => {
         <section className="mb-12">
           <h3 className="text-3xl font-semibold text-white font-poppins mb-6">Our Team</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {['Member 1', 'Member 2', 'Member 3'].map((member, index) => (
+            {[
+              { name: 'Shanzil', image: 'shanzilImage.jpeg' },
+              { name: 'Shahzeb', image: 'shahzebImage.PNG' },
+              { name: 'Tanmay', image: 'tanmayImage.jpeg' }
+            ].map((member, index) => (
               <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300" style={gradientStyle}>
                 <div className="p-6">
-                  {/* Placeholder image */}
-                  <div className="w-24 h-24 rounded-full bg-gray-200 mb-4 sm:mx-auto"></div>
-                  <h3 className="text-xl font-semibold text-white font-poppins mb-4">{member}</h3>
+                  {/* Inserting actual image */}
+                  <img src={member.image} alt={member.name} className="w-24 h-24 rounded-full bg-gray-200 mb-4 sm:mx-auto" />
+                  <h3 className="text-xl font-semibold text-white font-poppins mb-4">{member.name}</h3>
                   <p className="text-white font-poppins">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </div>
               </div>
@@ -48,10 +57,9 @@ const About = () => {
           <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-500 hover:scale-105" style={gradientStyle}>
             <div className="px-6 py-8 sm:p-12">
               <p className="text-lg text-white font-poppins">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero ac justo porttitor, et consequat quam aliquet. Fusce fermentum ex quis lorem rhoncus, sit amet mattis lacus blandit. Duis sed nunc nec metus volutpat lobortis nec nec sem. Aenean vulputate elit et ante sollicitudin, id malesuada lorem accumsan. Nam eget mi quis purus elementum feugiat eget ac tortor. Vestibulum mollis tellus vel tellus tempor vulputate. Cras vel sollicitudin metus. Aenean vestibulum consequat efficitur. Sed pharetra sollicitudin posuere. 
-              </p>
-              <p className="text-lg text-white font-poppins">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero ac justo porttitor, et consequat quam aliquet. Fusce fermentum ex quis lorem rhoncus, sit amet mattis lacus blandit. Duis sed nunc nec metus volutpat lobortis nec nec sem. Aenean vulputate elit et ante sollicitudin, id malesuada lorem accumsan. Nam eget mi quis purus elementum feugiat eget ac tortor. Vestibulum mollis tellus vel tellus tempor vulputate. Cras vel sollicitudin metus. Aenean vestibulum consequat efficitur. Sed pharetra sollicitudin posuere. 
+                Our vision is to build a vibrant community for student entrepreneurs. We aim to provide a platform where young innovators can connect, collaborate, and grow. By leveraging our expertise in technology and social media, we aspire to create an ecosystem that nurtures entrepreneurial talent, fosters creativity, and empowers the next generation of leaders.
+
+                Join us on this exciting journey to make a lasting impact and help student entrepreneurs turn their dreams into reality. 
               </p>
             </div>
           </div>
