@@ -4,6 +4,7 @@ import { Link as RouterLink, useLocation } from 'react-router-dom';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -37,19 +38,21 @@ export const Navbar = () => {
             Home
           </RouterLink>
           <Link
-  to="products"
-  spy={true}
-  smooth={true}
-  offset={-70}
-  duration={500}
-  onClick={() => {
-    closeMenu();
-    window.location.href = '/#products';
-  }}
-  className="text-lg font-semibold text-purple-400 transition duration-300 cursor-pointer font-poppins hover:text-gray-200"
->
-  Products
-</Link>
+            to="products"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={() => {
+              closeMenu();
+              if (location.pathname !== '/') {
+                window.location.href = '/#products';
+              }
+            }}
+            className="text-lg font-semibold text-purple-400 transition duration-300 cursor-pointer font-poppins hover:text-gray-200"
+          >
+            Products
+          </Link>
           <Link
             to="contact"
             spy={true}
@@ -71,7 +74,6 @@ export const Navbar = () => {
           </RouterLink>
         </div>
         <div className="md:hidden">
-         
           <button
             className="text-gray-200 hover:text-white focus:outline-none"
             onClick={toggleMenu}
@@ -95,7 +97,6 @@ export const Navbar = () => {
       </div>
       {isOpen && (
         <div className="md:hidden bg-gray-900">
-          
           <div className="px-2 py-3 space-y-1">
             <RouterLink
               to="/"
@@ -110,26 +111,27 @@ export const Navbar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              onClick={closeMenu} // Close menu on link click
+              onClick={() => {
+                closeMenu();
+                if (location.pathname !== '/') {
+                  window.location.href = '/#products';
+                }
+              }}
               className="block px-3 py-2 text-lg text-purple-400 font-semibold font-poppins hover:text-white hover:bg-gray-800"
             >
               Products
             </Link>
             <Link
-  to="contact"
-  spy={true}
-  smooth={true}
-  offset={-navbarHeight}
-  duration={500}
-  onClick={() => {
-    closeMenu();
-    window.location.href = '/#contact';
-  }}
-  className="text-lg font-semibold text-purple-400 transition duration-300 cursor-pointer font-poppins hover:text-gray-200"
->
-  Contact
-</Link>
-           
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              onClick={closeMenu} // Close menu on link click
+              className="block px-3 py-2 text-lg text-purple-400 font-semibold font-poppins hover:text-white hover:bg-gray-800"
+            >
+              Contact
+            </Link>
             <RouterLink
               to="/about"
               onClick={closeMenu} // Close menu on link click
