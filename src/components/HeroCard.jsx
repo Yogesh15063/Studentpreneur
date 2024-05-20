@@ -24,7 +24,6 @@ const Card = () => {
   }, [animated, control]);
 
   const handleJoinNowClick = () => {
-    
     window.location.href = "https://example.com";
   };
 
@@ -59,12 +58,11 @@ const Card = () => {
           className="bg-transparent text-xs h-8 rounded-full text-white p-1"
           style={{
             minWidth: "80px",
-            border: "2px solid transparent",
+            border: "2px solid ",
           }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.2 }}
-          animate={control}
         >
           Join Now
         </motion.button>
@@ -74,5 +72,4 @@ const Card = () => {
 };
 
 export default Card;
-
 
